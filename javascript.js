@@ -5,11 +5,14 @@ let url = 'http://danieldangs.com/itwd6408/json/faqs.json';
 //------------------------------------------------------------------------------------------------------
 
 //setting the warrenty cost//
+
+
+
 	$('#warranty').change(function(){
 		if(this.checked){
-			$('#serviceFee').val('$0.0');
+			$('#serviceFee').val(0);
 		} else {
-			$('#serviceFee').val('$85.0');
+			$('#serviceFee').val(85);
 		}
 	});
 
@@ -100,8 +103,45 @@ $('#buisness').click(function() {
 	$('#bond').val(0);
 });
 
-let proxy = 'https://cors-anywhere.herokuapp.com/';
 
+
+
+$(document).ready(function() {
+	$("#customer, #buisness, #warranty").change(function (){
+		
+		var bond = $("#bond").val();
+     	var serviceFee = $("#serviceFee").val();
+
+        var totalFee = +bond + +serviceFee;
+        var GST = (totalFee / 20) * 3;
+    	var totalGST = +totalFee + +GST;
+
+		$("#totalGST").val(totalGST);
+		$("#GST").val(GST);
+		$("#totalFee").val(totalFee);
+		
+
+	});
+
+	$("#addBtn, #removeBtn").click(function () {
+        var bond = $("#bond").val();
+        var serviceFee = $("#serviceFee").val();
+
+        var totalFee = +bond + +serviceFee;
+        var GST = (totalFee / 20) * 3;
+    	var totalGST = +totalFee + +GST;
+
+        $("#totalGST").val(totalGST);
+		$("#GST").val(GST);
+		$("#totalFee").val(totalFee);
+    });
+});
+
+
+
+
+
+let proxy = 'https://cors-anywhere.herokuapp.com/'
 
 $.getJSON(
 	proxy + url, //send a request to get this json file
@@ -155,3 +195,36 @@ $('.btn-demo-area button').on('click', function() {
 
 	$('.content-demo-area div').eq($(this).index()).show(1000);
 });
+
+//-------------------------------------		
+
+
+  
+//-------------------------------------		
+$(".box" ).draggable({
+	scope: 'demoBox',
+	revertDuration: 100,
+	start: function( event, ui ) {
+	  //Reset
+	  $( ".box" ).draggable( "option", "revert", true );
+	  $('.result').html('-');
+	}
+  });
+  
+$(".drag-area" ).droppable({
+	scope: 'demoBox',
+	drop: function( event, ui ) {
+	  let area = $(this).find(".drop-area").html();
+	  let box = $(ui.draggable).html();     
+	  $( ".box" ).draggable( "option", "revert", false );
+	  
+	  //Display action in text
+	  $('.result').html("[Action] <b>" + box + "</b>" +
+						" dropped on " + 
+						"<b>" + area + "</b>");
+	  
+	  //Re-align item
+	  $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
+	}
+ })
+  
