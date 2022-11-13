@@ -251,3 +251,4 @@ $(".drag-area" ).droppable({
     });
 });
 
+
