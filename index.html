@@ -59,6 +59,7 @@
 								</div>	
 								<div class="ml-lg-3 ml-2">
 									<fieldset class="row mb-4">
+										//options to pick titles for your name
 										    <label for="inputName1" class="col-sm-4 col-form-group mt-1">Title : </label>
 											<div class="col-sm-8">
 												<select class="form-select" id="specificSizeSelect" required>
@@ -68,10 +69,12 @@
 													<option value="3">Ms</option>
 													<option value="4">Miss</option>
 													<option value="5">Master</option>
+													<option value="6">DR</option>
 												</select>
 											</div>
 									</fieldset>
-									<fieldset>
+									//the main form for personal details
+									<fieldset
 											<div class="row mb-3">
 												<label for="inputName1" class="col-sm-4 col-form-label">First Name* :</label>
 												<div class="col-sm-8 mt-1 ">
@@ -127,13 +130,16 @@
 						
 					
 							<div class="col-12 col-md-12 col-lg-4" style="min-height: 70vh; background-color:#c2f0ee;">
+								//form for input inquiring about repair needs
 								<h4>REPAIR DETAILS</h4>
+								//purchase date
 								<div class="row mt-2">
 									<label class="col-12 col-md-12 col-lg-4">Purchase Date:*</label>
 									<div class="col-sm-8">
 										<input class="form-control" type="date" id="purchaseDate">
 									</div>
 								</div>		
+								//repair date 
 								<div class="row mt-1">
 									<label class="col-12 col-md-12 col-lg-4">Repair Date:*</label>
 									<div class="col-sm-8">
@@ -141,6 +147,7 @@
 									</div>	
 								</div>	
 								<!--Under Warranty-->
+								//extra information about phone
 								<div class="row">
 									<fieldset class="border border-primary col-12 col-lg-11 ms-1 me-4 mb-3 ml-3">
 										<legend class="col-11 float-none w-auto">Under Warranty</legend>									
@@ -197,10 +204,7 @@
 								</div>
 								
 							</div>
-						
-					
-						
-				
+							
 							<div class="col-12 col-md-12 col-lg-4"> 
 								
 								<div class="row p-3" style="min-height: 45vh; background-color: #5E9597;">
@@ -282,6 +286,7 @@
 						
 								</div>
 							</div>
+							//area for button for FAQ, Submit and Reset
 						<div class="col-12" style="background-color:#DE8B6F;">
 							<div class="col-12 text-center p-3" style="background-color: var(--button-section-color); min-height: 5vh">
 								<input type="submit" class="btn me-3 border border-dark text-light bg-success" style="width: 5em;" value="SUBMIT" onclick="window.location.href='Invoice.html';"">
