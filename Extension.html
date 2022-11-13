@@ -7,6 +7,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Form Starter</title>
+		<!--Importing bootsrap and css style sheet-->
 		<form name="techform" action="https://danieldangs.com/itwd6408/handle_survey.php" method="post" enctype="text/plain">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,7 +20,7 @@
 	
 	<body class="d-flex flex-column min-vh-100">
 		<header class="text-white bg-dark row" style="min-height: 10vh;">
-		
+		<!--header-->
 		<section class="col-12 col-md-12 col-lg-8 text-center">	
 			<h2 class="text-center p-3">Phone Fix Booking System </h2>
 		</section>
@@ -34,7 +35,7 @@
 		</header>
 		
 		<main>
-			//statement of autheticity
+			<!--statement of autheticity-->
 			<div class="col-12 col-lg-12 p-2" style="background-color: yellow;">
 				<h4>Statement of authenticity</h4>
 				<h7>I confirm that:</h7>
@@ -46,7 +47,8 @@
 						included without acknowledgement.</li>
 				</ul>
 			</div>
-		<div class="row" >
+			<!--buttons for div areas-->
+			<div class="row" >
 			<div class="col-12 col-lg-3 row btn-demo-area h-45">
 				<button type="button" class="col-4 col-lg-12">Geo Location finder</button>
 				<button type="button" class="col-4 col-lg-12">Chat Bot</button>
@@ -54,7 +56,7 @@
 				<button type="button" class="col-4 col-lg-12">File Upload</button>
 				<button type="button" class="col-4 col-lg-12">Drag and Drop</button>
 			</div>
-
+			<!--get your coordinates button-->
 			<div class="col-12 col-lg-9 bg-dark content-demo-area" style="min-height: 80vh;">
 				<div class="bg-danger" style="min-height: 80vh;">
 					<p>Click the button to get your coordinates.</p>
@@ -79,7 +81,7 @@
 						}
 					</script>
 				</div>
-
+				<!--Chat bot-->
 				<div class="bg-primary" style="min-height: 80vh;">
 					<h2 class="mb-2">Chatbot </h2>
 					<section class="mt-2">
@@ -89,7 +91,7 @@
 					</section>
 		
 				</div>
-
+				<!--html code for Interactive map-->
 				<div class="bg-secondary" style="min-height: 80vh; ">
 					<h2>Interactive Map</h2>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -286,19 +288,16 @@
 					</svg>
 									
 				</div>
-
+				<!--Upload a file jquery-->
 				<div class="bg-warning" style="min-height: 80vh;">
 					<h2>File Upload</h2>
 					<input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
 					<section id="display-image"></section>
 				</div>
-
+				<!--Drag and drop area-->
 				<div class="bg-success" style="min-height: 80vh;">
 					<h2>Drag and Drop</h2>
-
-					  
-					  
-					  <!--Drag Area Box 1: Available Courtesy Phones-->
+					<!--Drag Area Box 1: Available Courtesy Phones-->
 					<section class="drag-area">
 						<section class="drop-area">Available Courtesy Phones</section>
 						<section class="box iphone-image">iPhone</section>
@@ -306,17 +305,16 @@
 						<section class="box galaxy-image">Galaxy Z</section>
 						<section class="box charger-image">Charger</section>
 					</section>
-					  
-					  <!--Drag Area Box 2: Your Choice-->
+					<!--Drag Area Box 2: Your Choice-->
 					<section class="drag-area">
 						<section class="drop-area">Your Selection</dsection>
 					</section>
-					  
 					  <!--Display the outcome-->
 					<section class="result">-</section>
 				</div>
 			</div>
 		</div>
+		<!--footer-->
 		<footer class="mt-auto">
 			<h3 class="text-white bg-dark text-center p-5  min-height: 5vh"> Advanced Web Design and Development @2022.</h3>
 		</footer>
