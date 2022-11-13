@@ -36,7 +36,7 @@
 		<main>
 		<div class="row" >
 			<div class="col-12 col-lg-3 row btn-demo-area h-45">
-				<button type="button" class="col-4 col-lg-12">Geo Location</button>
+				<button type="button" class="col-4 col-lg-12">Geo Location finder</button>
 				<button type="button" class="col-4 col-lg-12">Chat Bot</button>
 				<button type="button" class="col-4 col-lg-12">Interactive Map</button>
 				<button type="button" class="col-4 col-lg-12">File Upload</button>
@@ -44,15 +44,28 @@
 			</div>
 
 			<div class="col-12 col-lg-9 bg-dark content-demo-area" style="min-height: 80vh;">
-				<div class="bg-primary" style="min-height: 80vh;">
-					<h1>Advanced JS: HTML Geolocation - show the shop location on Google Map</h1>
+				<div class="bg-danger" style="min-height: 80vh;">
+					<p>Click the button to get your coordinates.</p>
+					<section class="col-12 p-3" style="background-color: var(--button-section-color); min-height: 5vh">
+						<input onclick="getLocation()" type="getLocation()" class="btn me-3 border border-dark text-light bg-warning" style="width: 15em;" value="show my location">
+					</section>
+					<p id="location"></p>
+					<script>
+						var x = document.getElementById("location");
+							
+						function getLocation() {
+						if (navigator.geolocation) {
+							navigator.geolocation.getCurrentPosition(showPosition);
+						} else { 
+							x.innerHTML = "Geolocation is not supported by this browser.";
+						}
+						}
 
-					<h2>Click the button to get your coordinates.</h2>
-					<button onclick="getLocation()">Get current location</button>         
-					<p id="demo"></p>
-					<br>
-					<h3>Calculate the distance between the current  user location to shop location: It's your turn</h3>
-
+						function showPosition(position) {
+						x.innerHTML = "Latitude: " + position.coords.latitude + 
+						"<br>Longitude: " + position.coords.longitude;
+						}
+					</script>
 				</div>
 
 				<div class="bg-primary" style="min-height: 80vh;">
