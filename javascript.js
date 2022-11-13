@@ -227,4 +227,42 @@ $(".drag-area" ).droppable({
 	  $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
 	}
  })
-  
+
+
+ const image_input = document.querySelector("#image-input");
+
+ image_input.addEventListener("change", function() {
+   const reader = new FileReader();
+   reader.addEventListener("load", () => {
+	 const uploaded_image = reader.result;
+	 document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+   });
+   reader.readAsDataURL(this.files[0]);
+ });
+ 
+ $('svg path').each(function(index, item) {
+    var id = $(item).attr('id');
+        
+    $('svg #' + id).on('click', function(e) {
+        var id = $(e.currentTarget).attr('id');
+        $('svg path').removeClass('active');
+        $(e.currentTarget).addClass('active');
+        window.alert(id + ' Clicked');
+    });
+});
+
+var location = document.getElementById("location");
+
+						function getLocation() {
+						if (navigator.geolocation) {
+							navigator.geolocation.getCurrentPosition(showPosition);
+						} else { 
+							x.innerHTML = "Geolocation is not supported by this browser.";
+						}
+						}
+
+						function showPosition(position) {
+						x.innerHTML = "Latitude: " + position.coords.latitude + 
+						"<br>Longitude: " + position.coords.longitude;
+						}
+
